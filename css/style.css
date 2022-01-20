@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --calc-font-size: 2rem;
+  --btn-txt-color: #716f81;
+  --btn-border-color: #d3d3d3;
+  --btn-bg-color: #efefef;
+  --screen-txt-color: #fff;
+  --calc-bg-color: #fff;
+  --screen-bg-color: #81b622;
+  --keypad-bg-color: #fff;
+  --white-color: #fff;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Open Sans", "sans-serif";
+  font-size: 1rem;
+}
+
+*,
+*:after,
+*:before,
+*::selection {
+  box-sizing: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+
+  /* Disble selection on all the elements */
+  -webkit-touch-callout: none; /* Safari on iOS */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* supported by Chrome and Opera */
+}
+
+button,
+input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  border: 0;
+  background: var(--btn-bg-color);
+}
+
+main > #container {
+  /* Place calculator in the center of the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Required for placing the calculator in the center */
+  min-height: 100vh;
+
+  /*   overflow: hidden; */
+}
+
+#container .calculator-wrapper {
+  position: relative;
+  width: 262px;
+  padding: 10px;
+  background: #efefef;
+}
+
+.calculator-wrapper .calculator {
+  background: var(--calc-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.calculator .screen {
+  /* border: 2px solid #b2b2b2; */
+}
+
+.screen input[type="text"] {
+  width: 100%;
+  height: 110px;
+  border: none;
+  outline: none;
+  padding: 20px 15px;
+  color: var(--screen-txt-color);
+  background: var(--screen-bg-color);
+  text-align: right;
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.screen input[type="text"]::placeholder {
+  color: var(--screen-txt-color);
+}
+
+.keypad {
+  background-color: var(--keypad-bg-color);
+  padding: 10px;
+}
+
+.keypad .keypad-row {
+  padding-bottom: 5px;
+}
+
+.keypad .keypad-row:first-child {
+  padding-top: 10px;
+}
+
+.keypad .keypad-row:last-child {
+  padding-bottom: 10px;
+}
+
+.keypad .keypad-row .btn {
+  margin: 1px;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  color: var(--btn-txt-color);
+  text-align: center;
+
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 50%;
+  border: 2px solid var(--btn-border-color);
+
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Helper classes */
+.evaluate {
+  background-color: var(--screen-bg-color);
+}
+
+.evaluate > span {
+  color: var(--white-color);
+}
