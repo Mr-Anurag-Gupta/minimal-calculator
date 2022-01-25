@@ -19,7 +19,7 @@ numericButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
     // Ignore further entries if the length becomes
     // equal to 9.
-    const value = outputScreen.value.toString();
+    const value = outputScreen.value;
     if (value != undefined && value.length === 9) {
       expressResultInScientificNotation = true;
       return;
@@ -85,6 +85,7 @@ operators.forEach((operator) => {
 // Add listener to the evaluation button -> (=).
 evaluator.addEventListener("click", (e) => {
   outputScreen.value = eval(expression);
+  reduceFontSize();
   expression = outputScreen.value;
   isEvaluationHappened = true;
 });
@@ -99,13 +100,15 @@ function resetFontSize() {
  */
 function reduceFontSize() {
   const len = outputScreen.value.length + 1;
+  const valueAsFloat = Number.parseFloat(outputScreen.value);
   if (len == 7) {
     outputScreen.style.fontSize = "3rem";
   }
-  if (len == 8) {
+  else if (len == 8) {
     outputScreen.style.fontSize = "2.8rem";
   }
-  if (len == 9) {
+  else if (len >= 9) {
     outputScreen.style.fontSize = "2.6rem";
+    outputScreen.value = valueAsFloat.toPrecision(9);
   }
 }
