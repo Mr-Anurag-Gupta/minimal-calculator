@@ -4,7 +4,7 @@
   --btn-txt-color: #716f81;
   --btn-border-color: #d3d3d3;
   --btn-bg-color: #efefef;
-  --screen-txt-color: #fff;
+  --screen-txt-color: #ffffff;
   --calc-bg-color: #fff;
   --screen-bg-color: #6FCF97;
   --keypad-bg-color: #fff;
@@ -54,8 +54,6 @@ main > #container {
 
   /* Required for placing the calculator in the center */
   min-height: 100vh;
-
-  /* overflow: hidden; */
 }
 
 #container .calculator-wrapper {
@@ -66,13 +64,11 @@ main > #container {
 }
 
 .calculator-wrapper .calculator {
-  /* background: var(--calc-bg-color); */
   border-radius: 10px;
   overflow: hidden;
 }
 
 .calculator .screen {
-  /* border: 2px solid #b2b2b2; */
   height: 130px;
   position: relative;
 }
@@ -80,6 +76,7 @@ main > #container {
 .calculator .screen,
 .calculator .screen label,
 .calculator .screen input {
+  color: var(--screen-txt-color);
   background-color: var(--screen-bg-color);
 }
 
@@ -98,6 +95,7 @@ main > #container {
 
 .screen input[type="text"]::placeholder {
   color: var(--screen-txt-color);
+  opacity: 0.5;
 }
 
 .keypad {
@@ -135,11 +133,12 @@ main > #container {
   pointer-events: auto;
 }
 
+.keypad .keypad-row .btn img {
+  width: 20px;
+  height: 20px;
+}
+
 /* Helper classes */
 .evaluate {
   background-color: var(--screen-bg-color);
-}
-
-.evaluate > span {
-  color: var(--white-color);
 }

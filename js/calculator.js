@@ -12,7 +12,6 @@ let expression = "";
 // Flags
 let isOperatorDetected = false;
 let isEvaluationHappened = false;
-let expressResultInScientificNotation = false;
 
 // Add listener to each numeric button including (.)
 numericButtons.forEach((button) => {
@@ -21,7 +20,6 @@ numericButtons.forEach((button) => {
     // equal to 9.
     const value = outputScreen.value;
     if (value != undefined && value.length === 9) {
-      expressResultInScientificNotation = true;
       return;
     }
 
@@ -40,7 +38,8 @@ numericButtons.forEach((button) => {
       outputScreen.value = e.target.innerText;
       isOperatorDetected = false;
       resetFontSize();
-    } else {
+    }
+    else {
       if (isEvaluationHappened) {
         // reset the expression after evaluation
         // to start fresh.
@@ -58,7 +57,7 @@ numericButtons.forEach((button) => {
 // Add listeners to each operation
 operators.forEach((operator) => {
   operator.addEventListener("click", (e) => {
-    const operation = e.target.innerText;
+    const operation = e.target.parentElement.value;
 
     // Don't add the operation to expression, if the expression is
     // empty and operation isn't '+' or '-'.
