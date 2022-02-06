@@ -1,85 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Anurag Gupta">
-    <meta name="description" content="A minimal calculator with basic functionalities.">
-    <meta name="keywords" content="calculator, minimal calculator, basic calculator">
-    <meta name="theme-color" content="#4169E1">
-    <!-- SEO optimization and social sharing -->
-    <meta property="og:title" content="Anurag Gupta">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.mr-anurag-gupta.github.io/minimal-calculator">
-    <meta property="og:description" content="A minimal calculator with basic functionalities.">
-    <meta name="twitter:site" content="@__anuraggpta">
-    <meta name="twitter:creator" content="@__anuraggpta">
-    <title>Minimal Calculator</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&amp;family=Montserrat:wght@500&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <script src="js/calculator.js" defer></script>
-  </head>
-  <body>
-    <main>
-      <div id="container">
-        <div class="calculator-wrapper">
-          <div class="calculator">
-            <div class="screen">
-              <label for="output">
-                <input
-                  type="text"
-                  name="output"
-                  id="output"
-                  placeholder="0"
-                  disabled
-                  maxlength="9"
-                />
-              </label>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Anurag Gupta" />
+  <meta name="description" content="A minimal calculator with basic functionalities." />
+  <meta name="keywords" content="calculator, minimal calculator, basic calculator" />
+  <meta name="theme-color" content="#4169E1" />
+  <!-- SEO optimization and social sharing -->
+  <meta property="og:title" content="Anurag Gupta" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mr-anurag-gupta.github.io/minimal-calculator" />
+  <meta property="og:description" content="A minimal calculator with basic functionalities." />
+  <meta name="twitter:site" content="@__anuraggpta" />
+  <meta name="twitter:creator" content="@__anuraggpta" />
+  <title>Minimal Calculator</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&amp;family=Montserrat:wght@500&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script type="module" src="js/screen.mjs" defer></script>
+  <script type="module" src="js/keypad.mjs" defer></script>
+  <script type="module" src="js/calculator.mjs" defer></script>
+  <script type="module" src="js/app2.mjs" defer></script>
+</head>
+
+<body>
+  <main>
+    <div id="container">
+      <div class="calculator-wrapper">
+        <div class="calculator">
+          <div class="screen">
+            <label for="output">
+              <input type="text" name="output" id="output" placeholder="0" disabled maxlength="9" />
+            </label>
+          </div>
+          <div class="keypad">
+            <div class="keypad-row">
+              <button type="button" class="btn" value="7">7</button>
+              <button type="button" class="btn" value="8">8</button>
+              <button type="button" class="btn" value="9">9</button>
+              <button type="button" class="btn operator" value="+">
+                <img src="/assets/add30x30.png" alt="+" />
+              </button>
             </div>
-            <div class="keypad">
-              <div class="keypad-row">
-                <button type="button" class="btn">7</button>
-                <button type="button" class="btn">8</button>
-                <button type="button" class="btn">9</button>
-                <button type="button" class="btn operator" value="+">
-                    <img src="/assets/add30x30.png"/>
-                </button>
-              </div>
-              <div class="keypad-row">
-                <button type="button" class="btn">4</button>
-                <button type="button" class="btn">5</button>
-                <button type="button" class="btn">6</button>
-                <button type="button" class="btn operator" value="-">
-                    <img src="/assets/subtract30x30.png"/>
-                </button>
-              </div>
-              <div class="keypad-row">
-                <button type="button" class="btn">1</button>
-                <button type="button" class="btn">2</button>
-                <button type="button" class="btn">3</button>
-                <button type="button" class="btn operator" value="*">
-                    <img src="/assets/multiply30x30.png"/>
-                </button>
-              </div>
-              <div class="keypad-row">
-                <button type="button" class="btn">0</button>
-                <button type="button" class="btn">
-                  <span>.</span>
-                </button>
-                <button type="button" class="btn operator" value="/">
-                    <img src="/assets/divide30x30.png"/>
-                </button>
-                <button type="button" class="btn evaluate" value="=">
-                    <img src="/assets/equalsign30x30.png"/>
-                </button>
-              </div>
+            <div class="keypad-row">
+              <button type="button" class="btn" value="4">4</button>
+              <button type="button" class="btn" value="5">5</button>
+              <button type="button" class="btn" value="6">6</button>
+              <button type="button" class="btn operator" value="-">
+                <img src="/assets/subtract30x30.png" alt="-" />
+              </button>
+            </div>
+            <div class="keypad-row">
+              <button type="button" class="btn" value="1">1</button>
+              <button type="button" class="btn" value="2">2</button>
+              <button type="button" class="btn" value="3">3</button>
+              <button type="button" class="btn operator" value="*">
+                <img src="/assets/multiply30x30.png" alt="*" />
+              </button>
+            </div>
+            <div class="keypad-row">
+              <button type="button" class="btn" value="0">0</button>
+              <button type="button" class="btn" value=".">.</button>
+              <button type="button" class="btn operator" value="/">
+                <img src="/assets/divide30x30.png" alt="/" />
+              </button>
+              <button type="button" class="btn evaluate" value="=">
+                <img src="/assets/equalsign30x30.png" alt="=" />
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
+
 </html>

@@ -38,8 +38,7 @@ numericButtons.forEach((button) => {
       outputScreen.value = e.target.innerText;
       isOperatorDetected = false;
       resetFontSize();
-    }
-    else {
+    } else {
       if (isEvaluationHappened) {
         // reset the expression after evaluation
         // to start fresh.
@@ -102,11 +101,9 @@ function reduceFontSize() {
   const valueAsFloat = Number.parseFloat(outputScreen.value);
   if (len == 7) {
     outputScreen.style.fontSize = "3rem";
-  }
-  else if (len == 8) {
+  } else if (len == 8) {
     outputScreen.style.fontSize = "2.8rem";
-  }
-  else if (len >= 9) {
+  } else if (len >= 9) {
     outputScreen.style.fontSize = "2.6rem";
     outputScreen.value = valueAsFloat.toPrecision(9);
   }
