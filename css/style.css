@@ -1,12 +1,12 @@
 :root {
   --calc-font-size: 2rem;
-  --page-bg-color: rgba(111,207,151,0.31);
+  --page-bg-color: rgba(111, 207, 151, 0.31);
   --btn-txt-color: #716f81;
   --btn-border-color: #d3d3d3;
   --btn-bg-color: #efefef;
   --screen-txt-color: #ffffff;
   --calc-bg-color: #fff;
-  --screen-bg-color: #6FCF97;
+  --screen-bg-color: #6fcf97;
   --keypad-bg-color: #fff;
   --white-color: #fff;
 }
@@ -89,7 +89,8 @@ main > #container {
   outline: none;
   color: var(--screen-txt-color);
   text-align: right;
-  font-size: 3.2rem;
+  /* font-size: 3.2rem; */
+  font-size: 3rem;
   font-weight: 600;
 }
 

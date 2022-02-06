@@ -1,5 +1,3 @@
-import Screen from "./screen.mjs";
-
 class Keypad {
   #numericButtons;
   #operatorButtons;
@@ -131,8 +129,8 @@ class Keypad {
   #handleEvaluation = () => {
     let result = eval(this.#expression);
 
-    if (result.length > 8) {
-    }
+    // if (result.length > 8) {
+    // }
 
     this.#screen.update(result);
     this.#update(result, true, false, "");
@@ -156,8 +154,6 @@ class Keypad {
     //
   }
 
-  // Helper methods
-  // ----------------------------------------------------------
   #getValue(event) {
     const target = event.target;
     let value = target.value;

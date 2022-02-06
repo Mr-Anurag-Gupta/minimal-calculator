@@ -15,19 +15,15 @@ class Screen {
   update(value) {
     this.#result = value;
     this.#updateFontSize();
-    this.#handle.value = value;
+    this.#handle.value = this.#result;
   }
 
   #updateFontSize() {
     const len = this.#result.toString().length;
-    const valueAsFloat = Number.parseFloat(this.#result);
-    if (len == 7) {
-      this.#handle.style.fontSize = "3rem";
-    } else if (len == 8) {
+
+    if (len >= 9) {
       this.#handle.style.fontSize = "2.8rem";
-    } else if (len >= 9) {
-      this.#handle.style.fontSize = "2.6rem";
-      this.#handle.value = valueAsFloat.toPrecision(9);
+      this.#result = this.#result.toString().slice(0, 9);
     }
   }
 
