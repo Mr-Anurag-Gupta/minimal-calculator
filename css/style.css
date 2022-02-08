@@ -99,6 +99,13 @@ main > #container {
   opacity: 0.5;
 }
 
+.screen input[disabled] {
+  -webkit-text-fill-color: var(--screen-txt-color);
+  -webkit-opacity: 1;
+  opacity: 1;
+  color: var(--screen-txt-color);
+}
+
 .keypad {
   background-color: var(--keypad-bg-color);
   padding: 10px;
