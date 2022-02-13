@@ -60,12 +60,12 @@ main > #container {
   position: relative;
   width: 262px;
   padding: 10px;
-  /* background: var(--page-bg-color); */
 }
 
 .calculator-wrapper .calculator {
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px;
 }
 
 .calculator .screen {

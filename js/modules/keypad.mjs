@@ -19,8 +19,8 @@ class Keypad {
 
   #initialize(numericSelector, operatorSelector, evaluatorSelector, screen) {
     this.#screen = screen;
-    this.#expression = "";
-    this.#currentOutputValue = "";
+    this.#expression = '';
+    this.#currentOutputValue = '';
     this.#isOperatorDetected = false;
     this.#numericButtons = document.querySelectorAll(numericSelector);
     this.#operatorButtons = document.querySelectorAll(operatorSelector);
@@ -31,16 +31,16 @@ class Keypad {
   #addListeners() {
     // Attach listeners to numeric buttons [0-9]
     this.#numericButtons.forEach((numericbutton) => {
-      numericbutton.addEventListener("click", this.#handleNumbericButtons);
+      numericbutton.addEventListener('click', this.#handleNumbericButtons);
     });
 
     // Attach listeners to operator buttons [+, -, *, /]
     this.#operatorButtons.forEach((operatorButton) => {
-      operatorButton.addEventListener("click", this.#handleOperatorButtons);
+      operatorButton.addEventListener('click', this.#handleOperatorButtons);
     });
 
     // Attach listener to evaluator button [=]
-    this.#evaluateButton.addEventListener("click", this.#handleEvaluation);
+    this.#evaluateButton.addEventListener('click', this.#handleEvaluation);
   }
 
   #handleNumbericButtons = (event) => {
@@ -61,19 +61,19 @@ class Keypad {
     // then clear the output screen & set it to incoming
     // value.
     if (this.#isOperatorDetected) {
-      this.#currentOutputValue = "";
+      this.#currentOutputValue = '';
       this.#isOperatorDetected = false;
     }
 
     // The expression must be set to empty, if
     // a numeric button is press just after the evaluation.
     if (this.#isEvaluationHappened) {
-      expression = "";
+      expression = '';
       this.#isEvaluationHappened = false;
     }
 
     const regex = /\./;
-    if (value == ".") {
+    if (value == '.') {
       if (!regex.test(this.#currentOutputValue)) {
         this.#currentOutputValue += value;
         expression += value;
@@ -97,8 +97,8 @@ class Keypad {
     let value = this.#getValue(event);
 
     // If the expression is empty, either '+' or '-' can be added.
-    if (expression === "") {
-      if (value === "+" || value === "-") {
+    if (expression === '') {
+      if (value === '+' || value === '-') {
         expression += value;
       }
     }
@@ -127,13 +127,16 @@ class Keypad {
   };
 
   #handleEvaluation = () => {
+    // need different evaluation logic if the expression
+    // is complex.
+    // const regex = '/[+*/-]+/';
+    // const splits = this.#expression.split(regex);
+    // console.log(`Splits count: ${splits.length}`);
+
+    // Otherwise, it's just a normal expression.
     let result = eval(this.#expression);
-
-    // if (result.length > 8) {
-    // }
-
     this.#screen.update(result);
-    this.#update(result, true, false, "");
+    this.#update(result, true, false, '');
   };
 
   #update = (
@@ -157,7 +160,7 @@ class Keypad {
   #getValue(event) {
     const target = event.target;
     let value = target.value;
-    if (value == undefined && target.nodeName == "IMG") {
+    if (value == undefined && target.nodeName == 'IMG') {
       let parent = event.target.parentNode;
       value = parent.value;
     }
