@@ -127,14 +127,27 @@ class Keypad {
   };
 
   #handleEvaluation = () => {
-    // need different evaluation logic if the expression
-    // is complex.
-    // const regex = '/[+*/-]+/';
-    // const splits = this.#expression.split(regex);
-    // console.log(`Splits count: ${splits.length}`);
+    const exp = this.#expression;
+    const opsArray = exp.split(/\d/g).filter((n) => n != '');
+    const numsArray = exp.split(/\D/g);
 
-    // Otherwise, it's just a normal expression.
-    let result = eval(this.#expression);
+    let result = numsArray[0];
+    for (
+      let numIndex = 1, opsIndex = 0;
+      numIndex <= numsArray.length;
+      numIndex++, opsIndex++
+    ) {
+      if (opsArray[opsIndex] == '+') {
+        result = Number.parseInt(result) + Number.parseInt(numsArray[numIndex]);
+      } else if (opsArray[opsIndex] == '-') {
+        result -= numsArray[numIndex];
+      } else if (opsArray[opsIndex] == '*') {
+        result *= numsArray[numIndex];
+      } else if (opsArray[opsIndex] == '/') {
+        result /= numsArray[numIndex];
+      }
+    }
+
     this.#screen.update(result);
     this.#update(result, true, false, '');
   };
@@ -152,10 +165,6 @@ class Keypad {
     if (currentOutputValue !== undefined)
       this.#currentOutputValue = currentOutputValue;
   };
-
-  reset() {
-    //
-  }
 
   #getValue(event) {
     const target = event.target;
