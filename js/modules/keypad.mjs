@@ -85,7 +85,6 @@ class Keypad {
 
     this.#expression = expression;
     this.#screen.update(this.#currentOutputValue);
-    console.log(expression);
   };
 
   #handleOperatorButtons = (event) => {
